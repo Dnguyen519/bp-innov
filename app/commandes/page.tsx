@@ -1,10 +1,10 @@
 export default function CommandesPage() {
   return (
-    <div className="min-h-screen bg-background p-6">
+    <div className="min-h-screen bg-gray-100 p-6">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-3xl font-bold mb-6">Commandes</h1>
-        <div className="bg-white rounded-lg border p-6">
-          <h2 className="text-xl font-semibold mb-4">Liste des commandes</h2>
+        <h1 className="text-3xl font-bold mb-6 text-gray-900">Commandes</h1>
+        <div className="bg-white rounded-lg shadow border p-6">
+          <h2 className="text-xl font-semibold mb-4 text-gray-900">Liste des commandes</h2>
           <div className="overflow-x-auto">
             <table className="w-full border-collapse border border-gray-200">
               <thead>

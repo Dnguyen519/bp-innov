@@ -129,7 +129,12 @@ export const Label = React.forwardRef<HTMLLabelElement, React.LabelHTMLAttribute
   )
 )
 
-export const Select = ({ children, value, onValueChange, ...props }: any) => (
+export const Select = ({ children, value, onValueChange, ...props }: {
+  children: React.ReactNode
+  value?: string
+  onValueChange?: (value: string) => void
+  [key: string]: any
+}) => (
   <select 
     className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
     value={value}
@@ -190,16 +195,20 @@ export const TableCell = React.forwardRef<HTMLTableCellElement, React.TdHTMLAttr
   )
 )
 
-export const Checkbox = React.forwardRef<HTMLInputElement, React.InputHTMLAttributes<HTMLInputElement>>(
-  ({ className, ...props }, ref) => (
-    <input
-      type="checkbox"
-      ref={ref}
-      className={cn("h-4 w-4 rounded border border-primary text-primary focus:ring-2 focus:ring-primary", className)}
-      {...props}
-    />
-  )
-)
+export const Checkbox = React.forwardRef<
+  HTMLInputElement, 
+  React.InputHTMLAttributes<HTMLInputElement> & {
+    onCheckedChange?: (checked: boolean) => void
+  }
+>(({ className, onCheckedChange, ...props }, ref) => (
+  <input
+    type="checkbox"
+    ref={ref}
+    className={cn("h-4 w-4 rounded border border-primary text-primary focus:ring-2 focus:ring-primary", className)}
+    onChange={(e) => onCheckedChange?.(e.target.checked)}
+    {...props}
+  />
+))
 
 export const Progress = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement> & { value?: number }>(
   ({ className, value = 0, ...props }, ref) => (
