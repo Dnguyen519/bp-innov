@@ -1,10 +1,6 @@
 "use client"
 
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Progress } from "@/components/ui/progress"
-import { Separator } from "@/components/ui/separator"
+import { Badge, Button, Card, CardContent, CardDescription, CardHeader, CardTitle, Progress, Separator } from "@/components/ui"
 import { 
   Bell, 
   Calendar, 

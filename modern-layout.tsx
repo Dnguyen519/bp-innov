@@ -3,17 +3,7 @@
 import { ReactNode } from "react"
 import { cn } from "@/lib/utils"
 import { ModernSidebarNav } from "./modern-sidebar-nav"
-import { Button } from "@/components/ui/button"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-import { Badge } from "@/components/ui/badge"
+import { Button, Avatar, AvatarFallback, AvatarImage, DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger, Badge } from "@/components/ui"
 import { Bell, LogOut, Settings, User } from "lucide-react"
 
 interface ModernLayoutProps {

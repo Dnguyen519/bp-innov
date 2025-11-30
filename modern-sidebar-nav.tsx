@@ -1,9 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { Badge, Button, Sheet, SheetContent, SheetTrigger } from "@/components/ui"
 import { cn } from "@/lib/utils"
 import {
   Building2,
