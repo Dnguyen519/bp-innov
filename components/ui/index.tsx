@@ -129,15 +129,20 @@ export const Label = React.forwardRef<HTMLLabelElement, React.LabelHTMLAttribute
   )
 )
 
-export const Select = ({ children, ...props }: any) => <div {...props}>{children}</div>
-export const SelectTrigger = ({ className, children, ...props }: any) => (
-  <button className={cn("flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50", className)} {...props}>
+export const Select = ({ children, value, onValueChange, ...props }: any) => (
+  <select 
+    className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+    value={value}
+    onChange={(e) => onValueChange?.(e.target.value)}
+    {...props}
+  >
     {children}
-  </button>
+  </select>
 )
-export const SelectValue = ({ placeholder }: any) => <span className="text-muted-foreground">{placeholder}</span>
-export const SelectContent = ({ children }: any) => <div className="hidden">{children}</div>
-export const SelectItem = ({ children, ...props }: any) => <div {...props}>{children}</div>
+export const SelectTrigger = ({ className, children, ...props }: any) => <div className={className}>{children}</div>
+export const SelectValue = ({ placeholder }: any) => <option value="" disabled>{placeholder}</option>
+export const SelectContent = ({ children }: any) => <>{children}</>
+export const SelectItem = ({ children, value, ...props }: any) => <option value={value} {...props}>{children}</option>
 
 export const Table = React.forwardRef<HTMLTableElement, React.HTMLAttributes<HTMLTableElement>>(
   ({ className, ...props }, ref) => (

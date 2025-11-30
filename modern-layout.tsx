@@ -3,7 +3,7 @@
 import { ReactNode } from "react"
 import { cn } from "@/lib/utils"
 import { ModernSidebarNav } from "./modern-sidebar-nav"
-import { Button, Avatar, AvatarFallback, AvatarImage, DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger, Badge } from "@/components/ui"
+import { Button, Avatar, AvatarFallback, AvatarImage, Badge } from "@/components/ui"
 import { Bell, LogOut, Settings, User } from "lucide-react"
 
 interface ModernLayoutProps {
@@ -50,41 +50,13 @@ export function ModernLayout({ children, className }: ModernLayoutProps) {
                 </Badge>
               </Button>
 
-              {/* User Menu */}
-              <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" className="relative h-8 w-8 rounded-full">
-                    <Avatar className="h-8 w-8">
-                      <AvatarImage src="/avatar.jpg" alt="Manh Tam LY" />
-                      <AvatarFallback>MT</AvatarFallback>
-                    </Avatar>
-                  </Button>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent className="w-56" align="end" forceMount>
-                  <DropdownMenuLabel className="font-normal">
-                    <div className="flex flex-col space-y-1">
-                      <p className="text-sm font-medium leading-none">Manh Tam LY</p>
-                      <p className="text-xs leading-none text-muted-foreground">
-                        admin@bpinnov.net
-                      </p>
-                    </div>
-                  </DropdownMenuLabel>
-                  <DropdownMenuSeparator />
-                  <DropdownMenuItem>
-                    <User className="mr-2 h-4 w-4" />
-                    <span>Page d'accueil</span>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem>
-                    <Settings className="mr-2 h-4 w-4" />
-                    <span>Paramètres</span>
-                  </DropdownMenuItem>
-                  <DropdownMenuSeparator />
-                  <DropdownMenuItem>
-                    <LogOut className="mr-2 h-4 w-4" />
-                    <span>Se déconnecter</span>
-                  </DropdownMenuItem>
-                </DropdownMenuContent>
-              </DropdownMenu>
+              {/* User Avatar */}
+              <Button variant="ghost" className="relative h-8 w-8 rounded-full">
+                <Avatar className="h-8 w-8">
+                  <AvatarImage src="/avatar.jpg" alt="Manh Tam LY" />
+                  <AvatarFallback>MT</AvatarFallback>
+                </Avatar>
+              </Button>
             </div>
           </div>
         </header>

@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Badge, Button, Sheet, SheetContent, SheetTrigger } from "@/components/ui"
+import { Badge, Button } from "@/components/ui"
 import { cn } from "@/lib/utils"
 import {
   Building2,
@@ -110,17 +110,24 @@ export function ModernSidebarNav() {
 
   return (
     <>
-      {/* Mobile Sidebar */}
-      <Sheet open={isOpen} onOpenChange={setIsOpen}>
-        <SheetTrigger asChild>
-          <Button variant="ghost" size="icon" className="md:hidden">
-            <Menu className="h-5 w-5" />
-          </Button>
-        </SheetTrigger>
-        <SheetContent side="left" className="p-0 w-80">
-          <NavContent />
-        </SheetContent>
-      </Sheet>
+      {/* Mobile Menu Toggle */}
+      <Button 
+        variant="ghost" 
+        size="icon" 
+        className="md:hidden fixed top-4 left-4 z-50"
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        <Menu className="h-5 w-5" />
+      </Button>
+
+      {/* Mobile Sidebar Overlay */}
+      {isOpen && (
+        <div className="md:hidden fixed inset-0 z-40 bg-black bg-opacity-50" onClick={() => setIsOpen(false)}>
+          <div className="fixed inset-y-0 left-0 w-80 bg-background" onClick={(e) => e.stopPropagation()}>
+            <NavContent />
+          </div>
+        </div>
+      )}
 
       {/* Desktop Sidebar */}
       <div className="hidden md:flex md:w-64 md:flex-col md:fixed md:inset-y-0">

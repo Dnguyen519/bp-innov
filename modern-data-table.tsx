@@ -184,41 +184,29 @@ export function ModernDataTable() {
             <div className="space-y-2">
               <Label htmlFor="agency">Agence</Label>
               <Select value={searchFilters.agency} onValueChange={(value) => setSearchFilters(prev => ({...prev, agency: value}))}>
-                <SelectTrigger>
-                  <SelectValue placeholder="Sélectionner une agence" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="nantes">Nantes</SelectItem>
-                  <SelectItem value="angers">Angers</SelectItem>
-                  <SelectItem value="tours">Tours</SelectItem>
-                </SelectContent>
+                <SelectValue placeholder="Sélectionner une agence" />
+                <SelectItem value="nantes">Nantes</SelectItem>
+                <SelectItem value="angers">Angers</SelectItem>
+                <SelectItem value="tours">Tours</SelectItem>
               </Select>
             </div>
             <div className="space-y-2">
               <Label htmlFor="status">Statut</Label>
               <Select value={searchFilters.status} onValueChange={(value) => setSearchFilters(prev => ({...prev, status: value}))}>
-                <SelectTrigger>
-                  <SelectValue placeholder="Sélectionner un statut" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="validee">Validée</SelectItem>
-                  <SelectItem value="enregistree">Enregistrée</SelectItem>
-                  <SelectItem value="en-attente">En attente</SelectItem>
-                </SelectContent>
+                <SelectValue placeholder="Sélectionner un statut" />
+                <SelectItem value="validee">Validée</SelectItem>
+                <SelectItem value="enregistree">Enregistrée</SelectItem>
+                <SelectItem value="en-attente">En attente</SelectItem>
               </Select>
             </div>
             <div className="space-y-2">
               <Label htmlFor="sort">Trier les données</Label>
               <Select value={searchFilters.sortBy} onValueChange={(value) => setSearchFilters(prev => ({...prev, sortBy: value}))}>
-                <SelectTrigger>
-                  <SelectValue placeholder="Trier par..." />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="date-asc">Date croissant</SelectItem>
-                  <SelectItem value="date-desc">Date décroissant</SelectItem>
-                  <SelectItem value="client">Client</SelectItem>
-                  <SelectItem value="status">Statut</SelectItem>
-                </SelectContent>
+                <SelectValue placeholder="Trier par..." />
+                <SelectItem value="date-asc">Date croissant</SelectItem>
+                <SelectItem value="date-desc">Date décroissant</SelectItem>
+                <SelectItem value="client">Client</SelectItem>
+                <SelectItem value="status">Statut</SelectItem>
               </Select>
             </div>
           </div>
@@ -228,15 +216,10 @@ export function ModernDataTable() {
             <div className="flex items-center gap-2">
               <Label htmlFor="limit" className="text-sm">Nombre de lignes affichées</Label>
               <Select value={displayLimit.toString()} onValueChange={(value) => setDisplayLimit(parseInt(value))}>
-                <SelectTrigger className="w-20">
-                  <SelectValue />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="10">10</SelectItem>
-                  <SelectItem value="20">20</SelectItem>
-                  <SelectItem value="50">50</SelectItem>
-                  <SelectItem value="100">100</SelectItem>
-                </SelectContent>
+                <SelectItem value="10">10</SelectItem>
+                <SelectItem value="20">20</SelectItem>
+                <SelectItem value="50">50</SelectItem>
+                <SelectItem value="100">100</SelectItem>
               </Select>
             </div>
             <Button>
