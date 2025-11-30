@@ -183,7 +183,7 @@ export function ModernDataTable() {
             </div>
             <div className="space-y-2">
               <Label htmlFor="agency">Agence</Label>
-              <Select value={searchFilters.agency} onValueChange={(value) => setSearchFilters(prev => ({...prev, agency: value}))}>
+              <Select value={searchFilters.agency} onValueChange={(value: string) => setSearchFilters(prev => ({...prev, agency: value}))}>
                 <SelectValue placeholder="Sélectionner une agence" />
                 <SelectItem value="nantes">Nantes</SelectItem>
                 <SelectItem value="angers">Angers</SelectItem>
@@ -192,7 +192,7 @@ export function ModernDataTable() {
             </div>
             <div className="space-y-2">
               <Label htmlFor="status">Statut</Label>
-              <Select value={searchFilters.status} onValueChange={(value) => setSearchFilters(prev => ({...prev, status: value}))}>
+              <Select value={searchFilters.status} onValueChange={(value: string) => setSearchFilters(prev => ({...prev, status: value}))}>
                 <SelectValue placeholder="Sélectionner un statut" />
                 <SelectItem value="validee">Validée</SelectItem>
                 <SelectItem value="enregistree">Enregistrée</SelectItem>
@@ -201,7 +201,7 @@ export function ModernDataTable() {
             </div>
             <div className="space-y-2">
               <Label htmlFor="sort">Trier les données</Label>
-              <Select value={searchFilters.sortBy} onValueChange={(value) => setSearchFilters(prev => ({...prev, sortBy: value}))}>
+              <Select value={searchFilters.sortBy} onValueChange={(value: string) => setSearchFilters(prev => ({...prev, sortBy: value}))}>
                 <SelectValue placeholder="Trier par..." />
                 <SelectItem value="date-asc">Date croissant</SelectItem>
                 <SelectItem value="date-desc">Date décroissant</SelectItem>
@@ -215,7 +215,7 @@ export function ModernDataTable() {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
               <Label htmlFor="limit" className="text-sm">Nombre de lignes affichées</Label>
-              <Select value={displayLimit.toString()} onValueChange={(value) => setDisplayLimit(parseInt(value))}>
+              <Select value={displayLimit.toString()} onValueChange={(value: string) => setDisplayLimit(parseInt(value))}>
                 <SelectItem value="10">10</SelectItem>
                 <SelectItem value="20">20</SelectItem>
                 <SelectItem value="50">50</SelectItem>
